@@ -41,7 +41,7 @@ export default function App() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <h2 style={{ flexGrow: 1 }}>{selectedPage}</h2>
+                    <h2 style={{ flexGrow: 1, textAlign: 'center', color:'#020112' }}>{selectedPage}</h2>
                 </Toolbar>
             </AppBar>
 
