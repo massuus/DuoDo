@@ -7,6 +7,7 @@ const drawerWidth = 250; // Set your desired width for the drawer
 const StyledDrawer = styled(Drawer)({
     width: drawerWidth,
     flexShrink: 0,
+    backgroundColor: 'transparent'
 });
 
 const StyledDrawerContent = styled('div')({

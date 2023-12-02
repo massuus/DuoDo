@@ -13,7 +13,6 @@ const StyledListItem = styled(ListItem)({
     margin: '8px',
     padding: '8px',
     color: '#000000',
-    backgroundColor: '#f9f9f9',
     borderRadius: '4px',
     display: 'flex',
     justifyContent: 'space-between', // Align items to the right
@@ -23,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
     textField: {
         marginRight: '8px',
         flex: 1,
-        color: 'rgba(255, 255, 255)',
         borderRadius: '8px',
         '& .MuiOutlinedInput-root': {
             '& fieldset': {

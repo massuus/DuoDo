@@ -51,19 +51,26 @@ export default function App() {
                 onPageChange={handlePageChange}
             />
 
-            <Grid container style={{ margin: 0, height: '100vh' }}>
+            <div style={{ display: 'flex', height: '100vh' }}>
                 <Hidden mdDown>
                     {/* Drawer for desktop */}
-                    <Grid item xs={12} md={2}>
+                    <div
+                        style={{
+                            flex: '0 0 250px',
+                            overflowX: 'hidden',
+                        }}
+                    >
+                        {/* NavigationMenu component */}
                         <NavigationMenu
                             isOpen={isDrawerOpen}
                             onClose={() => setDrawerOpen(false)}
                             onPageChange={handlePageChange}
                         />
-                    </Grid>
+                    </div>
                 </Hidden>
 
-                <Grid item xs={12} md={isDrawerOpen ? 12 : 10}>
+                <div style={{ flex: '1', overflowX: 'hidden' }}>
+                    {/* Content of the page */}
                     {(() => {
                         switch (selectedPage) {
                             case 'Todo':
@@ -76,8 +83,8 @@ export default function App() {
                                 return <div>{`Content of ${selectedPage}`}</div>;
                         }
                     })()}
-                </Grid>
-            </Grid>
+                </div>
+            </div>
         </GlobalProvider>
     );
 }
