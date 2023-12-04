@@ -78,9 +78,9 @@ function TodoApp({ onPageChange }) {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', background: 'linear-gradient(180deg, #038a8a, #020112)' }}>
-            <List style={{ flex: 1, marginBottom:'100px', marginLeft:'10%', marginRight:'10%',  borderRadius: '8px' }}>
+            <List style={{ flex: 1, marginBottom: '100px', marginLeft: '10%', marginRight: '10%', borderRadius: '8px' }}>
                 {todoList.map((todo, index) => (
-                    <StyledListItem key={index} style={{backgroundColor:'rgba(3, 137, 137)',border: '2px solid rgb(2, 94, 99)', borderColor:'rgb(2, 94, 99)', borderRadius: '8px'}}>
+                    <StyledListItem key={index} style={{ backgroundColor: 'rgba(3, 137, 137)', border: '2px solid rgb(2, 94, 99)', borderColor: 'rgb(2, 94, 99)', borderRadius: '8px' }}>
                         <ListItemIcon>
                             <Checkbox
                                 checked={todo.completed}
@@ -89,13 +89,15 @@ function TodoApp({ onPageChange }) {
                             />
                         </ListItemIcon>
                         {editIndex === index ? (
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', width: '100%' }}>
+                                {/* Updated styling for the text input */}
                                 <TextField
                                     value={editedText}
                                     onChange={(e) => setEditedText(e.target.value)}
                                     className={classes.textField}
                                 />
-                                <IconButton onClick={() => handleUpdateTodo(index, { ...todo, text: editedText })} style={{ color: '#4caf50' }}>
+                                {/* Updated styling for the checkmark button */}
+                                <IconButton onClick={() => handleUpdateTodo(index, { ...todo, text: editedText })} style={{ color: '#4caf50', marginLeft: '8px' }}>
                                     <CheckIcon />
                                 </IconButton>
                             </div>
@@ -133,9 +135,9 @@ function TodoApp({ onPageChange }) {
                     position: 'fixed',
                     width: '-webkit-fill-available',
                     bottom: '0',
-                    backgroundColor:'rgb(2, 20, 35)',
+                    backgroundColor: 'rgb(2, 20, 35)',
                     border: '3px solid rgb(2, 94, 99)',
-                    borderColor:'rgb(2, 94, 99)',
+                    borderColor: 'rgb(2, 94, 99)',
                     borderRadius: '8px'
                 }}>
                 <TextField
@@ -144,12 +146,12 @@ function TodoApp({ onPageChange }) {
                     className={classes.textField}
                     InputLabelProps={{
                         style: {
-                            color: 'rgba(3, 136, 137',
+                            color: 'rgba(3, 136, 137)',
                         },
                     }}
                     inputProps={{
                         style: {
-                            color: 'rgba(3, 136, 137',
+                            color: 'rgba(3, 136, 137)',
                         },
                     }}
                     value={newTodoText}
@@ -172,5 +174,4 @@ function TodoApp({ onPageChange }) {
         </div>
     );
 }
-
 export default TodoApp;
